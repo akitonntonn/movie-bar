@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>消化器事件 | BAR LONG MOVIE</title>
+    <meta name="description" content="消化器事件のロング動画を流すための静的サイト。">
+    <link rel="preload" href="assets/style.css" as="style">
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand" href="#top" aria-label="消化器事件">
+          <span class="brand-mark">BAR</span>
+          <span data-config="title">消化器事件</span>
+        </a>
+        <button class="button secondary" id="toggleMute" type="button" aria-pressed="true">音声 ON</button>
+      </header>
+
+      <section id="top" class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">LONG MOVIE / BAR &</p>
+          <h1 data-config="title">消化器事件</h1>
+          <p class="lead" data-config="lead">
+            bar &で起きた伝説の事件をアニメで再現しました！
+          </p>
+          <a class="button primary" href="#screen">再生エリアへ</a>
+        </div>
+
+        <aside class="event-card" aria-label="作品情報">
+          <span class="stamp">CASE FILE</span>
+          <dl>
+            <div>
+              <dt>TITLE</dt>
+              <dd data-config="title">消化器事件</dd>
+            </div>
+            <div>
+              <dt>PLACE</dt>
+              <dd>bar &</dd>
+            </div>
+            <div>
+              <dt>FORMAT</dt>
+              <dd>ANIMATION</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section id="screen" class="screen-section" aria-label="動画再生エリア">
+        <div class="screen-heading">
+          <p class="kicker">NOW SHOWING</p>
+          <h2>BAR FLOOR SCREEN</h2>
+        </div>
+
+        <div class="video-frame">
+          <video
+            id="mainVideo"
+            class="movie"
+            src="assets/shokakuki-jiken.mp4"
+            controls
+            controlslist="nodownload noremoteplayback noplaybackrate"
+            disablepictureinpicture
+            disableremoteplayback
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/config.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
