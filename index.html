@@ -11,6 +11,7 @@
         <link rel="preload" href="assets/style.css" as="style" />
         <link rel="stylesheet" href="assets/style.css" />
     </head>
+
     <body>
         <main class="page-shell">
             <header class="site-header" aria-label="サイトヘッダー">
@@ -18,11 +19,12 @@
                     <span class="brand-mark">BAR</span>
                     <span data-config="title">消化器事件</span>
                 </a>
+
                 <button
                     class="button secondary"
                     id="toggleMute"
                     type="button"
-                    aria-pressed="true"
+                    aria-pressed="false"
                 >
                     音声 ON
                 </button>
@@ -31,24 +33,30 @@
             <section id="top" class="hero-grid">
                 <div class="hero-copy">
                     <p class="kicker">LONG MOVIE / BAR &</p>
+
                     <h1 data-config="title">消化器事件</h1>
+
                     <p class="lead" data-config="lead">
                         bar &で起きた伝説の事件をアニメで再現しました！
                     </p>
+
                     <a class="button primary" href="#screen">再生エリアへ</a>
                 </div>
 
                 <aside class="event-card" aria-label="作品情報">
                     <span class="stamp">CASE FILE</span>
+
                     <dl>
                         <div>
                             <dt>TITLE</dt>
                             <dd data-config="title">消化器事件</dd>
                         </div>
+
                         <div>
                             <dt>PLACE</dt>
                             <dd>bar &</dd>
                         </div>
+
                         <div>
                             <dt>FORMAT</dt>
                             <dd>ANIMATION</dd>
@@ -68,23 +76,7 @@
                 </div>
 
                 <div class="video-frame">
-                    <iframe
-                        class="movie"
-                        src="https://www.youtube-nocookie.com/embed/oO5D7lVAHw8?rel=0&modestbranding=1&playsinline=1"
-                        title="消化器事件"
-                        frameborder="0"
-                        allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                            web-share;
-                        "
-                        allowfullscreen
-                    >
-                    </iframe>
+                    <div id="youtubePlayer" class="movie"></div>
                 </div>
             </section>
         </main>

@@ -1,6 +1,8 @@
-const video = document.querySelector("#mainVideo");
 const toggleMute = document.querySelector("#toggleMute");
 const config = window.siteConfig || {};
+
+let player;
+let isPlayerReady = false;
 
 function applyConfig() {
   if (config.pageTitle) {
@@ -13,10 +15,6 @@ function applyConfig() {
       element.textContent = config[key];
     }
   });
-
-  if (config.videoSrc) {
-    video.src = config.videoSrc;
-  }
 }
 
 function blockSaveShortcuts(event) {
@@ -27,29 +25,55 @@ function blockSaveShortcuts(event) {
 }
 
 function syncMuteButton() {
-  const isMuted = video.muted;
+  if (!player || !isPlayerReady) return;
+
+  const isMuted = player.isMuted();
   toggleMute.textContent = isMuted ? "音声 ON" : "音声 OFF";
   toggleMute.setAttribute("aria-pressed", String(!isMuted));
 }
 
-toggleMute.addEventListener("click", async () => {
-  video.muted = !video.muted;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("youtubePlayer", {
+    videoId: "oO5D7lVAHw8",
+    playerVars: {
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1,
+    },
+    events: {
+      onReady: function () {
+        isPlayerReady = true;
+        player.mute();
+        syncMuteButton();
+      },
+      onStateChange: function () {
+        syncMuteButton();
+      },
+    },
+  });
+}
+
+toggleMute.addEventListener("click", () => {
+  if (!player || !isPlayerReady) return;
+
+  if (player.isMuted()) {
+    player.unMute();
+    player.setVolume(100);
+  } else {
+    player.mute();
+  }
+
   syncMuteButton();
-
-  if (!video.paused) {
-    return;
-  }
-
-  try {
-    await video.play();
-  } catch {
-    video.controls = true;
-  }
 });
 
 applyConfig();
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 document.addEventListener("keydown", blockSaveShortcuts);
-video.addEventListener("contextmenu", (event) => event.preventDefault());
-video.addEventListener("volumechange", syncMuteButton);
-syncMuteButton();
+
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+const tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+
+const firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
