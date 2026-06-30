@@ -18,10 +18,12 @@
 }
 
 html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
+    overflow-x: hidden;
     min-width: 320px;
     margin: 0;
     color: var(--ink);
@@ -231,7 +233,6 @@ dd {
 }
 
 @media (max-width: 860px) {
-    .site-header,
     .screen-heading {
         align-items: stretch;
         flex-direction: column;
@@ -258,26 +259,33 @@ dd {
 
 @media (max-width: 520px) {
     .page-shell {
-        width: min(100% - 18px, 1180px);
-        padding-top: 10px;
+        width: min(100% - 12px, 1180px);
+        padding-top: 8px;
     }
 
     .site-header {
         top: 8px;
+        gap: 10px;
+        padding: 8px;
         box-shadow: 5px 5px 0 var(--ink);
     }
 
     .brand {
-        flex-wrap: wrap;
+        flex: 1;
+        gap: 8px;
+        min-width: 0;
+        font-size: 0.95rem;
+        white-space: nowrap;
     }
 
     .hero-grid {
-        padding: 22px 0 8px;
+        gap: 14px;
+        padding: 18px 0 8px;
     }
 
     .hero-copy,
     .event-card {
-        padding: 16px;
+        padding: 14px;
         box-shadow: 7px 7px 0 var(--ink);
     }
 
@@ -292,8 +300,19 @@ dd {
     }
 
     .button {
-        width: 100%;
-        min-height: 48px;
+        min-height: 44px;
+        padding: 9px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .site-header .button {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 40px;
+        padding: 7px 10px;
+        border-width: 3px;
+        box-shadow: 4px 4px 0 var(--ink);
     }
 
     dl {
@@ -306,7 +325,7 @@ dd {
 }
 .video-frame {
     position: relative;
-    width: min(100%, 960px);
+    width: min(100%, 1120px);
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     overflow: hidden;
@@ -322,4 +341,31 @@ dd {
 
 #youtubePlayer iframe {
     border: 0;
+}
+
+@media (max-width: 520px) {
+    .screen-section {
+        padding-top: 4px;
+    }
+
+    .screen-heading {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .screen-heading .kicker {
+        margin-bottom: 0;
+    }
+
+    .screen-heading h2 {
+        font-size: clamp(1.45rem, 11vw, 2.65rem);
+    }
+
+    .video-frame {
+        width: calc(100vw - 10px);
+        margin-left: 50%;
+        border-width: 4px;
+        box-shadow: 6px 6px 0 var(--pink);
+        transform: translateX(-50%);
+    }
 }
