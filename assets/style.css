@@ -1,301 +1,325 @@
 :root {
-  color-scheme: light;
-  --ink: #111111;
-  --paper: #fff7df;
-  --white: #ffffff;
-  --yellow: #ffe14d;
-  --pink: #ff4fa3;
-  --cyan: #33d7ff;
-  --green: #4dff88;
-  --shadow: 8px 8px 0 var(--ink);
-  --border: 4px solid var(--ink);
-  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    color-scheme: light;
+    --ink: #111111;
+    --paper: #fff7df;
+    --white: #ffffff;
+    --yellow: #ffe14d;
+    --pink: #ff4fa3;
+    --cyan: #33d7ff;
+    --green: #4dff88;
+    --shadow: 8px 8px 0 var(--ink);
+    --border: 4px solid var(--ink);
+    font-family:
+        Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  min-width: 320px;
-  margin: 0;
-  color: var(--ink);
-  background:
-    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px) 0 0 / 34px 34px,
-    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px) 0 0 / 34px 34px,
-    var(--paper);
+    min-width: 320px;
+    margin: 0;
+    color: var(--ink);
+    background:
+        linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px) 0
+            0 / 34px 34px,
+        linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px) 0 0 / 34px
+            34px,
+        var(--paper);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 button {
-  font: inherit;
+    font: inherit;
 }
 
 .page-shell {
-  width: min(1180px, calc(100% - 28px));
-  margin: 0 auto;
-  padding: 18px 0 56px;
+    width: min(1180px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: 18px 0 56px;
 }
 
 .site-header {
-  position: sticky;
-  top: 12px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px;
-  border: var(--border);
-  background: var(--white);
-  box-shadow: var(--shadow);
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px;
+    border: var(--border);
+    background: var(--white);
+    box-shadow: var(--shadow);
 }
 
 .brand {
-  display: flex;
-  min-width: 0;
-  align-items: center;
-  gap: 10px;
-  font-weight: 950;
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+    font-weight: 950;
 }
 
 .brand-mark {
-  border: 3px solid var(--ink);
-  background: var(--yellow);
-  padding: 8px 10px;
-  box-shadow: 4px 4px 0 var(--ink);
-  font-size: 0.88rem;
-  font-weight: 950;
+    border: 3px solid var(--ink);
+    background: var(--yellow);
+    padding: 8px 10px;
+    box-shadow: 4px 4px 0 var(--ink);
+    font-size: 0.88rem;
+    font-weight: 950;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
-  gap: 28px;
-  align-items: end;
-  padding: 40px 0 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+    gap: 28px;
+    align-items: end;
+    padding: 40px 0 28px;
 }
 
 .hero-copy {
-  border: var(--border);
-  background: var(--green);
-  padding: clamp(24px, 5vw, 54px);
-  box-shadow: 12px 12px 0 var(--ink);
+    border: var(--border);
+    background: var(--green);
+    padding: clamp(24px, 5vw, 54px);
+    box-shadow: 12px 12px 0 var(--ink);
 }
 
 .kicker {
-  width: fit-content;
-  margin: 0 0 16px;
-  border: 3px solid var(--ink);
-  background: var(--pink);
-  padding: 8px 10px;
-  box-shadow: 4px 4px 0 var(--ink);
-  font-size: clamp(0.78rem, 2vw, 0.95rem);
-  font-weight: 950;
+    width: fit-content;
+    margin: 0 0 16px;
+    border: 3px solid var(--ink);
+    background: var(--pink);
+    padding: 8px 10px;
+    box-shadow: 4px 4px 0 var(--ink);
+    font-size: clamp(0.78rem, 2vw, 0.95rem);
+    font-weight: 950;
 }
 
 h1,
 h2,
 p {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 h1 {
-  margin-bottom: 18px;
-  font-size: clamp(3rem, 10vw, 7rem);
-  line-height: 0.88;
-  letter-spacing: 0;
+    margin-bottom: 18px;
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.88;
+    letter-spacing: 0;
 }
 
 .lead {
-  max-width: 760px;
-  margin-bottom: 22px;
-  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
-  line-height: 1.65;
-  font-weight: 900;
+    max-width: 760px;
+    margin-bottom: 22px;
+    font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+    line-height: 1.65;
+    font-weight: 900;
 }
 
 .button {
-  display: inline-flex;
-  min-height: 52px;
-  align-items: center;
-  justify-content: center;
-  border: var(--border);
-  padding: 12px 18px;
-  box-shadow: 6px 6px 0 var(--ink);
-  color: var(--ink);
-  font-weight: 950;
-  cursor: pointer;
-  transition: transform 140ms ease, box-shadow 140ms ease;
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    padding: 12px 18px;
+    box-shadow: 6px 6px 0 var(--ink);
+    color: var(--ink);
+    font-weight: 950;
+    cursor: pointer;
+    transition:
+        transform 140ms ease,
+        box-shadow 140ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0 var(--ink);
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--ink);
 }
 
 .button.primary {
-  background: var(--yellow);
+    background: var(--yellow);
 }
 
 .button.secondary {
-  background: var(--white);
+    background: var(--white);
 }
 
 .event-card {
-  position: relative;
-  border: var(--border);
-  background: var(--pink);
-  padding: 28px 22px 22px;
-  box-shadow: 12px 12px 0 var(--ink);
-  transform: rotate(1.5deg);
+    position: relative;
+    border: var(--border);
+    background: var(--pink);
+    padding: 28px 22px 22px;
+    box-shadow: 12px 12px 0 var(--ink);
+    transform: rotate(1.5deg);
 }
 
 .stamp {
-  position: absolute;
-  top: -24px;
-  left: 18px;
-  border: 3px solid var(--ink);
-  background: var(--yellow);
-  padding: 8px 12px;
-  box-shadow: 4px 4px 0 var(--ink);
-  font-weight: 950;
+    position: absolute;
+    top: -24px;
+    left: 18px;
+    border: 3px solid var(--ink);
+    background: var(--yellow);
+    padding: 8px 12px;
+    box-shadow: 4px 4px 0 var(--ink);
+    font-weight: 950;
 }
 
 dl {
-  display: grid;
-  gap: 16px;
-  margin: 0;
+    display: grid;
+    gap: 16px;
+    margin: 0;
 }
 
 dt {
-  margin-bottom: 4px;
-  font-size: 0.78rem;
-  font-weight: 950;
+    margin-bottom: 4px;
+    font-size: 0.78rem;
+    font-weight: 950;
 }
 
 dd {
-  margin: 0;
-  border: 3px solid var(--ink);
-  background: var(--white);
-  padding: 12px;
-  font-weight: 950;
+    margin: 0;
+    border: 3px solid var(--ink);
+    background: var(--white);
+    padding: 12px;
+    font-weight: 950;
 }
 
 .screen-section {
-  padding: 10px 0 42px;
+    padding: 10px 0 42px;
 }
 
 .screen-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 18px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
 }
 
 .screen-heading h2 {
-  margin: 0;
-  font-size: clamp(1.65rem, 6vw, 4.5rem);
-  line-height: 0.95;
-  text-align: right;
+    margin: 0;
+    font-size: clamp(1.65rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    text-align: right;
 }
 
 .video-frame {
-  border: 6px solid var(--ink);
-  background: var(--ink);
-  box-shadow: 14px 14px 0 var(--pink);
+    border: 6px solid var(--ink);
+    background: var(--ink);
+    box-shadow: 14px 14px 0 var(--pink);
 }
 
 .movie {
-  display: block;
-  width: 100%;
-  max-height: min(78vh, 860px);
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: #000000;
+    display: block;
+    width: 100%;
+    max-height: min(78vh, 860px);
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000000;
 }
 
 @media (max-width: 860px) {
-  .site-header,
-  .screen-heading {
-    align-items: stretch;
-    flex-direction: column;
-  }
+    .site-header,
+    .screen-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 30px 0 20px;
-  }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 0 20px;
+    }
 
-  .event-card {
-    transform: none;
-  }
+    .event-card {
+        transform: none;
+    }
 
-  .screen-heading h2 {
-    text-align: left;
-  }
+    .screen-heading h2 {
+        text-align: left;
+    }
 
-  .movie {
-    max-height: 70vh;
-  }
+    .movie {
+        max-height: 70vh;
+    }
 }
 
 @media (max-width: 520px) {
-  .page-shell {
-    width: min(100% - 18px, 1180px);
-    padding-top: 10px;
-  }
+    .page-shell {
+        width: min(100% - 18px, 1180px);
+        padding-top: 10px;
+    }
 
-  .site-header {
-    top: 8px;
-    box-shadow: 5px 5px 0 var(--ink);
-  }
+    .site-header {
+        top: 8px;
+        box-shadow: 5px 5px 0 var(--ink);
+    }
 
-  .brand {
-    flex-wrap: wrap;
-  }
+    .brand {
+        flex-wrap: wrap;
+    }
 
-  .hero-grid {
-    padding: 22px 0 8px;
-  }
+    .hero-grid {
+        padding: 22px 0 8px;
+    }
 
-  .hero-copy,
-  .event-card {
-    padding: 16px;
-    box-shadow: 7px 7px 0 var(--ink);
-  }
+    .hero-copy,
+    .event-card {
+        padding: 16px;
+        box-shadow: 7px 7px 0 var(--ink);
+    }
 
-  .hero-copy h1 {
-    margin-bottom: 12px;
-    font-size: clamp(2.55rem, 15vw, 4.2rem);
-  }
+    .hero-copy h1 {
+        margin-bottom: 12px;
+        font-size: clamp(2.55rem, 15vw, 4.2rem);
+    }
 
-  .lead {
-    margin-bottom: 14px;
-    line-height: 1.55;
-  }
+    .lead {
+        margin-bottom: 14px;
+        line-height: 1.55;
+    }
 
-  .button {
+    .button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    dl {
+        gap: 8px;
+    }
+
+    dd {
+        padding: 8px;
+    }
+}
+.video-frame {
+    position: relative;
+    width: min(100%, 960px);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#youtubePlayer,
+#youtubePlayer iframe,
+.movie {
     width: 100%;
-    min-height: 48px;
-  }
+    height: 100%;
+    display: block;
+}
 
-  dl {
-    gap: 8px;
-  }
-
-  dd {
-    padding: 8px;
-  }
+#youtubePlayer iframe {
+    border: 0;
 }
